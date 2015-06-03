@@ -32,7 +32,7 @@ class BoardPanel extends JPanel {
 		}
 
 		for (final BoardPiece piece : this.pieces) {
-			g.drawImage(piece.getImage(), sizeWidth * piece.getHorizontaPosition(),
+			g.drawImage(piece.getImage(), sizeWidth * piece.getHorizontalPosition(),
 					sizeHeight * piece.getVerticalPosition(), sizeWidth, sizeHeight,
 					this);
 		}
