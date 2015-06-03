@@ -1,17 +1,17 @@
 package com.towerdefense.boardisplay;
 
 public class Board {
-	private final BoardFrame boardWindow;
+	private final BoardFrame boardFrame;
 
-	public Board(final int width, final int height, final BoardCell boardCases[][]) {
-		this.boardWindow = new BoardFrame(width, height, boardCases);
+	public Board(final int width, final int height, final BoardCell boardCells[][]) {
+		this.boardFrame = new BoardFrame(width, height, boardCells);
 	}
 
-	public void placerPiece(final BoardPiece piece) {
-		this.boardWindow.placePiece(piece);
+	public void placePiece(final BoardPiece piece) {
+		this.boardFrame.placePiece(piece);
 	}
 
-	public void rafraichir() {
-		this.boardWindow.refresh();
+	public void refresh() {
+		this.boardFrame.refresh();
 	}
 }
