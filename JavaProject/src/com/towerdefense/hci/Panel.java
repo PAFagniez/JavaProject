@@ -1,4 +1,4 @@
-package HCI;
+package com.towerdefense.hci;
 
 import javax.swing.JPanel;
 
