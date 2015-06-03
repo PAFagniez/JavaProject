@@ -1,8 +1,10 @@
+import com.towerdefense.hci.Frame;
+
 
 public class TowerDefense {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		final Frame frame = new Frame();
 
 	}
 
