@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import com.towerdefense.src.event.DisplayLevelSelectionPanel;
 import com.towerdefense.src.event.DisplayMainMenu;
+import com.towerdefense.src.event.ExitGame;
 
 public class Frame extends JFrame {
 	/**
@@ -55,7 +56,7 @@ public class Frame extends JFrame {
 		this.buttonLoad = new JButton("Load");
 		this.buttonLoad.setFont(new Font("Magneto", Font.PLAIN, 20));
 
-		this.buttonExit = new JButton("Exit");
+		this.buttonExit = new JButton(new ExitGame(this,"Exit"));
 		this.buttonExit.setFont(new Font("Magneto", Font.PLAIN, 20));
 
 		this.add(this.buttonPlay, this.mainMenu.getGc());
