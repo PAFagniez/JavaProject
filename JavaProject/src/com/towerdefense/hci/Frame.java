@@ -1,8 +1,5 @@
 package com.towerdefense.hci;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-
 import javax.swing.JFrame;
 
 public class Frame extends JFrame {
@@ -10,17 +7,23 @@ public class Frame extends JFrame {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private final Panel contentPane;
+
+	private static int HEIGHT = 550;
+	private static int WIDTH = 800;
+
+	private final MainPanel contentPane;
+
 
 	public Frame (){
-		this.contentPane = new Panel();
-		this.contentPane.setBackground(Color.BLACK);
-		this.contentPane.setLayout(new BorderLayout());
+		this.contentPane = new MainPanel();
 
 
-		setSize(750, 600);
+		setSize(WIDTH, HEIGHT);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(this.contentPane);
+		setResizable(true);
+		setLocationRelativeTo(null);
 	}
+
 }
