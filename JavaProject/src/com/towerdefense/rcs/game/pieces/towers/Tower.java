@@ -6,8 +6,8 @@ import com.towerdefense.rcs.game.Upgradable;
 import com.towerdefense.rcs.game.pieces.DamageType;
 import com.towerdefense.rcs.game.pieces.Fighter;
 
-public class Tower extends Fighter implements Upgradable{
-	
+public abstract class Tower extends Fighter implements Upgradable{
+
 	protected int level;
 	protected int attackSpeed;
 	protected DamageType damagetype;
@@ -16,26 +16,29 @@ public class Tower extends Fighter implements Upgradable{
 	protected Image image;
 	protected int x;
 	protected int y;
-	
+
 
 	public Tower() {
 	}
-	
-	
-		public boolean die(){
-			return false;	
-	}
-		
-		
-		public int attack(){
-			return attackRange;
+
+
+	@Override
+	public boolean die(){
+		return false;
 	}
 
-		
-		public boolean upgrade() {
-			return false;
+
+	@Override
+	public int attack(){
+		return this.attackRange;
 	}
-	
+
+
+	@Override
+	public boolean upgrade() {
+		return false;
+	}
+
 }
-	
+
 
