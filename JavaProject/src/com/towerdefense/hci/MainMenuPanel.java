@@ -29,11 +29,11 @@ public class MainMenuPanel extends JPanel {
 		this(new ImageIcon(img).getImage());
 
 		this.labelExiageek = new JLabel("ExiaGeek");
-		this.labelExiageek.setFont(new Font("Tele-Marines", Font.PLAIN, 30));
+		this.labelExiageek.setFont(new Font("Tele-Marines", Font.PLAIN, 40));
 		this.labelExiageek.setForeground(Color.GREEN);
 
 		this.labelTitle = new JLabel("Tower Defense");
-		this.labelTitle.setFont(new Font("Tele-Marines", Font.PLAIN, 30));
+		this.labelTitle.setFont(new Font("Tele-Marines", Font.PLAIN, 40));
 		this.labelTitle.setForeground(Color.GREEN);
 
 		this.gbl = new GridBagLayout();
