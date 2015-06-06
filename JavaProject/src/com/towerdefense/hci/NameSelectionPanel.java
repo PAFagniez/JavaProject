@@ -30,7 +30,7 @@ public class NameSelectionPanel extends JPanel {
 
 		this.title = new JLabel("Enter your name");
 		this.title.setFont(new Font("Tele-Marines", Font.PLAIN, 40));
-		this.title.setForeground(Color.GREEN);
+		this.title.setForeground(Color.BLACK);
 
 		this.nameTextField = new JTextField("Player", 20);
 

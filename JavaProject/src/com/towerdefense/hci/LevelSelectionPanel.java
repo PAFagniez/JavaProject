@@ -29,7 +29,7 @@ public class LevelSelectionPanel extends JPanel{
 
 		this.title = new JLabel("Level selection");
 		this.title.setFont(new Font("Tele-Marines", Font.PLAIN, 40));
-		this.title.setForeground(Color.GREEN);
+		this.title.setForeground(Color.BLACK);
 
 		this.gbl = new GridBagLayout();
 		setLayout(this.gbl);
