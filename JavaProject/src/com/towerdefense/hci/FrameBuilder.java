@@ -3,6 +3,9 @@ package com.towerdefense.hci;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Color;
 
 public class FrameBuilder {
 
@@ -35,6 +38,10 @@ public class FrameBuilder {
 	 */
 	private void initialize() {
 		this.frame = new JFrame();
+		frame.getContentPane().setForeground(Color.BLACK);
+		
+		JLabel lblAttentionMachinMachin = new JLabel("Attention machin machin truc la ");
+		frame.getContentPane().add(lblAttentionMachinMachin, BorderLayout.NORTH);
 	}
 
 }

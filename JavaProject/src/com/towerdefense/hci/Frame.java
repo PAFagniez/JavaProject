@@ -48,7 +48,7 @@ public class Frame extends JFrame {
 	}
 
 	public void buildMainMenu (){
-		this.mainMenu = new MainMenuPanel("res/LaMatrice.jpg");
+		this.mainMenu = new MainMenuPanel("res/matrice2.jpg");
 		setContentPane(this.mainMenu);
 		this.buttonPlay = new JButton(new DisplayLevelSelectionPanel(this, "Play"));
 		this.buttonPlay.setFont(new Font("Magneto", Font.PLAIN, 20));
@@ -73,7 +73,7 @@ public class Frame extends JFrame {
 	}
 
 	public void buildLevelSelectionMenu (){
-		this.levelSelectionMenu = new LevelSelectionPanel("res/LaMatrice.jpg");
+		this.levelSelectionMenu = new LevelSelectionPanel("res/matrice2.jpg");
 		setContentPane(this.levelSelectionMenu);
 		this.buttonMap1 = new JButton("  MotherBoard Attack  ");
 		this.buttonMap1.setFont(new Font("Magneto", Font.PLAIN, 20));
@@ -105,7 +105,7 @@ public class Frame extends JFrame {
 	}
 
 	public void buildNameSelectionPanel(){
-		this.nameSelectionPanel = new NameSelectionPanel("res/LaMatrice.jpg");
+		this.nameSelectionPanel = new NameSelectionPanel("res/matrice2.jpg");
 		setContentPane(this.nameSelectionPanel);
 
 		this.buttonValidate = new JButton(new DisplayMainMenu(this,"Validate"));
