@@ -1,4 +1,4 @@
-package com.towerdefense.boardisplay;
+package com.towerdefense.rcs.boardisplay;
 
 import java.awt.Graphics;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.towerdefense.src.event;
+package com.towerdefense.rcs.event;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
@@ -6,7 +6,7 @@ import javax.swing.AbstractAction;
 import com.towerdefense.hci.Frame;
 
 
-public class DisplayLevelSelectionPanel extends AbstractAction {
+public class DisplayMainMenu extends AbstractAction {
 
 	/**
 	 *
@@ -15,7 +15,7 @@ public class DisplayLevelSelectionPanel extends AbstractAction {
 
 	private final Frame frame;
 
-	public DisplayLevelSelectionPanel (Frame frame, String texte){
+	public DisplayMainMenu (Frame frame, String texte){
 		super(texte);
 
 		this.frame = frame;
@@ -23,7 +23,8 @@ public class DisplayLevelSelectionPanel extends AbstractAction {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.frame.buildLevelSelectionMenu();
+		this.frame.buildMainMenu();
+
 		this.frame.repaint();
 		this.frame.revalidate();
 	}
