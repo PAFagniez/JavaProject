@@ -7,9 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import com.towerdefense.src.event.DisplayLevelSelectionPanel;
-import com.towerdefense.src.event.DisplayMainMenu;
-import com.towerdefense.src.event.ExitGame;
+import com.towerdefense.rcs.event.DisplayLevelSelectionPanel;
+import com.towerdefense.rcs.event.DisplayMainMenu;
+import com.towerdefense.rcs.event.ExitGame;
 
 public class Frame extends JFrame {
 	/**
