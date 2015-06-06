@@ -8,7 +8,6 @@ public class TowerDefense {
 
 		final Frame frame = new Frame();
 
-
 	}
 
 }

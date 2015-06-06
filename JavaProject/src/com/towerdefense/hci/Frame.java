@@ -17,11 +17,9 @@ public class Frame extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private static int HEIGHT = 550;
-	private static int WIDTH = 800;
-
 	private MainMenuPanel mainMenu;
 	private LevelSelectionPanel levelSelectionMenu;
+	private NameSelectionPanel nameSelectionPanel;
 
 	private JButton buttonPlay;
 	private JButton buttonLoad;
@@ -30,25 +28,27 @@ public class Frame extends JFrame {
 	private JButton buttonMap1;
 	private JButton buttonMap2;
 	private JButton buttonMap3;
-	private JButton buttonReturn;
+
+	private JButton buttonValidate;
+	private JButton buttonBack;
 
 	public Frame (){
-		buildMainMenu();
+		buildNameSelectionPanel();
 
 		build();
 	}
 
 	public void build(){
-		setSize(WIDTH, HEIGHT);
+		setExtendedState(MAXIMIZED_BOTH);
+		setUndecorated(true);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(true);
 		setLocationRelativeTo(null);
 	}
 
-
 	public void buildMainMenu (){
-		this.mainMenu = new MainMenuPanel();
+		this.mainMenu = new MainMenuPanel("res/LaMatrice.jpg");
 		setContentPane(this.mainMenu);
 		this.buttonPlay = new JButton(new DisplayLevelSelectionPanel(this, "Play"));
 		this.buttonPlay.setFont(new Font("Magneto", Font.PLAIN, 20));
@@ -73,7 +73,7 @@ public class Frame extends JFrame {
 	}
 
 	public void buildLevelSelectionMenu (){
-		this.levelSelectionMenu = new LevelSelectionPanel();
+		this.levelSelectionMenu = new LevelSelectionPanel("res/LaMatrice.jpg");
 		setContentPane(this.levelSelectionMenu);
 		this.buttonMap1 = new JButton("  MotherBoard Attack  ");
 		this.buttonMap1.setFont(new Font("Magneto", Font.PLAIN, 20));
@@ -84,8 +84,8 @@ public class Frame extends JFrame {
 		this.buttonMap3 = new JButton("       Bios Attack      ");
 		this.buttonMap3.setFont(new Font("Magneto", Font.PLAIN, 20));
 
-		this.buttonReturn = new JButton(new DisplayMainMenu(this, "Back"));
-		this.buttonReturn.setFont(new Font("Magneto", Font.PLAIN, 20));
+		this.buttonBack = new JButton(new DisplayMainMenu(this, "Back"));
+		this.buttonBack.setFont(new Font("Magneto", Font.PLAIN, 20));
 
 		this.add(this.buttonMap1, this.levelSelectionMenu.getGc());
 		this.levelSelectionMenu.getGc().gridx = GridBagConstraints.REMAINDER;
@@ -99,10 +99,28 @@ public class Frame extends JFrame {
 		this.levelSelectionMenu.getGc().gridx = GridBagConstraints.REMAINDER;
 		this.levelSelectionMenu.getGc().gridy = 4;
 
-		this.add(this.buttonReturn, this.levelSelectionMenu.getGc());
+		this.add(this.buttonBack, this.levelSelectionMenu.getGc());
 		this.levelSelectionMenu.getGc().gridx = GridBagConstraints.REMAINDER;
 		this.levelSelectionMenu.getGc().gridy = GridBagConstraints.REMAINDER;
+	}
 
+	public void buildNameSelectionPanel(){
+		this.nameSelectionPanel = new NameSelectionPanel("res/LaMatrice.jpg");
+		setContentPane(this.nameSelectionPanel);
+
+		this.buttonValidate = new JButton(new DisplayMainMenu(this,"Validate"));
+		this.buttonValidate.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.buttonExit = new JButton(new ExitGame(this,"Exit"));
+		this.buttonExit.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.add(this.buttonValidate, this.nameSelectionPanel.getGc());
+		this.nameSelectionPanel.getGc().gridx = GridBagConstraints.REMAINDER;
+		this.nameSelectionPanel.getGc().gridy = 4;
+
+		this.add(this.buttonExit, this.nameSelectionPanel.getGc());
+		this.nameSelectionPanel.getGc().gridx = GridBagConstraints.REMAINDER;
+		this.nameSelectionPanel.getGc().gridy = GridBagConstraints.REMAINDER;
 	}
 
 	public JPanel getMainMenu() {
