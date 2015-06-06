@@ -20,22 +20,22 @@ public class Tower extends Fighter implements Upgradable{
 
 	public Tower() {
 	}
+	
+	
 		public boolean die(){
-			return false;
-			
+			return false;	
 	}
+		
 		
 		public int attack(){
 			return attackRange;
-			
-		}
-		@Override
-		public boolean upgrade() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-	
+	}
 
+		
+		public boolean upgrade() {
+			return false;
+	}
+	
 }
 	
 
