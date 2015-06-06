@@ -107,7 +107,6 @@ public class Frame extends JFrame {
 	public void buildNameSelectionPanel(){
 		this.nameSelectionPanel = new NameSelectionPanel("res/matrice2.jpg");
 		setContentPane(this.nameSelectionPanel);
-
 		this.buttonValidate = new JButton(new DisplayMainMenu(this,"Validate"));
 		this.buttonValidate.setFont(new Font("Magneto", Font.PLAIN, 20));
 
