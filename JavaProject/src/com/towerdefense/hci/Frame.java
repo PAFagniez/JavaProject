@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import com.towerdefense.src.event.DisplayLevelSelectionPanel;
 import com.towerdefense.src.event.DisplayMainMenu;
+import com.towerdefense.src.event.DisplayNameSelection;
 import com.towerdefense.src.event.ExitGame;
 
 public class Frame extends JFrame {
@@ -22,6 +23,7 @@ public class Frame extends JFrame {
 
 	private MainMenuPanel mainMenu;
 	private LevelSelectionPanel levelSelectionMenu;
+	private NameSelectionPanel nameSelectionPanel;
 
 	private JButton buttonPlay;
 	private JButton buttonLoad;
@@ -32,6 +34,9 @@ public class Frame extends JFrame {
 	private JButton buttonMap3;
 	private JButton buttonReturn;
 
+	private JButton buttonValidate;
+	private JButton buttonBack;
+
 	public Frame (){
 		buildMainMenu();
 
@@ -39,16 +44,16 @@ public class Frame extends JFrame {
 	}
 
 	public void build(){
-		setSize(WIDTH, HEIGHT);
+		setExtendedState(MAXIMIZED_BOTH);
+		setUndecorated(true);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(true);
 		setLocationRelativeTo(null);
 	}
 
-
 	public void buildMainMenu (){
-		this.mainMenu = new MainMenuPanel();
+		this.mainMenu = new MainMenuPanel("res/laMatrice.jpg");
 		setContentPane(this.mainMenu);
 		this.buttonPlay = new JButton(new DisplayLevelSelectionPanel(this, "Play"));
 		this.buttonPlay.setFont(new Font("Magneto", Font.PLAIN, 20));
@@ -75,13 +80,13 @@ public class Frame extends JFrame {
 	public void buildLevelSelectionMenu (){
 		this.levelSelectionMenu = new LevelSelectionPanel();
 		setContentPane(this.levelSelectionMenu);
-		this.buttonMap1 = new JButton("  MotherBoard Attack  ");
+		this.buttonMap1 = new JButton(new DisplayNameSelection(this, "  MotherBoard Attack  "));
 		this.buttonMap1.setFont(new Font("Magneto", Font.PLAIN, 20));
 
-		this.buttonMap2 = new JButton("Hard Drive Disk Attack");
+		this.buttonMap2 = new JButton(new DisplayNameSelection(this, "Hard Drive Disk Attack"));
 		this.buttonMap2.setFont(new Font("Magneto", Font.PLAIN, 20));
 
-		this.buttonMap3 = new JButton("       Bios Attack      ");
+		this.buttonMap3 = new JButton(new DisplayNameSelection(this, "       Bios Attack      "));
 		this.buttonMap3.setFont(new Font("Magneto", Font.PLAIN, 20));
 
 		this.buttonReturn = new JButton(new DisplayMainMenu(this, "Back"));
@@ -102,7 +107,25 @@ public class Frame extends JFrame {
 		this.add(this.buttonReturn, this.levelSelectionMenu.getGc());
 		this.levelSelectionMenu.getGc().gridx = GridBagConstraints.REMAINDER;
 		this.levelSelectionMenu.getGc().gridy = GridBagConstraints.REMAINDER;
+	}
 
+	public void buildNameSelectionPanel(){
+		this.nameSelectionPanel = new NameSelectionPanel();
+		setContentPane(this.nameSelectionPanel);
+
+		this.buttonValidate = new JButton("Validate");
+		this.buttonValidate.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.buttonBack = new JButton(new DisplayLevelSelectionPanel(this, "Back"));
+		this.buttonBack.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.add(this.buttonValidate, this.levelSelectionMenu.getGc());
+		this.levelSelectionMenu.getGc().gridx = GridBagConstraints.REMAINDER;
+		this.levelSelectionMenu.getGc().gridy = 4;
+
+		this.add(this.buttonBack, this.levelSelectionMenu.getGc());
+		this.levelSelectionMenu.getGc().gridx = GridBagConstraints.RELATIVE;
+		this.levelSelectionMenu.getGc().gridy = 5;
 	}
 
 	public JPanel getMainMenu() {

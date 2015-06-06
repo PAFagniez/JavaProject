@@ -6,21 +6,24 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public class LevelSelectionPanel extends JPanel{
-
+public class NameSelectionPanel extends JPanel {
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
 	private final JLabel title;
+	private final JTextField nameTextField;
 	private final GridBagLayout gbl;
 	private final GridBagConstraints gc;
 
-	public LevelSelectionPanel() {
-		this.title = new JLabel("Level selection");
+	public NameSelectionPanel (){
+		this.title = new JLabel("Enter your name");
 		this.title.setFont(new Font("Tele-Marines", Font.PLAIN, 30));
+		add(this.title, "NORTH");
+
+		this.nameTextField = new JTextField(20);
 
 		this.gbl = new GridBagLayout();
 		setLayout(this.gbl);
@@ -32,6 +35,15 @@ public class LevelSelectionPanel extends JPanel{
 		this.gc.gridx = GridBagConstraints.REMAINDER;
 		this.gc.gridy = 1;
 
+
+		this.add(this.nameTextField, this.gc);
+		this.gc.gridx = GridBagConstraints.REMAINDER;
+		this.gc.gridy = 2;
+
+	}
+
+	public JLabel getTitle() {
+		return this.title;
 	}
 
 	public GridBagLayout getGbl() {
