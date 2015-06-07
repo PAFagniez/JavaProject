@@ -1,6 +1,6 @@
 package com.towerdefense.rcs.game.pieces.towers;
 
-import java.awt.Image;
+import javax.swing.JLabel;
 
 import com.towerdefense.rcs.game.Upgradable;
 import com.towerdefense.rcs.game.pieces.DamageType;
@@ -13,7 +13,7 @@ public abstract class Tower extends Fighter implements Upgradable{
 	protected DamageType damagetype;
 	protected int attackRange;
 	protected int health;
-	protected Image image;
+	protected JLabel image;
 	protected int x;
 	protected int y;
 

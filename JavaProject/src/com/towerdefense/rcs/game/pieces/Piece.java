@@ -1,11 +1,11 @@
 package com.towerdefense.rcs.game.pieces;
 
-import java.awt.Image;
+import javax.swing.JLabel;
 
-public class Piece {
+public abstract class Piece {
 
 	protected int health;
-	protected Image image;
+	protected JLabel image;
 	protected int x;
 	protected int y;
 
@@ -17,11 +17,11 @@ public class Piece {
 		this.health = health;
 	}
 
-	public Image getImage() {
+	public JLabel getImage() {
 		return this.image;
 	}
 
-	public void setImage(Image image) {
+	public void setImage(JLabel image) {
 		this.image = image;
 	}
 

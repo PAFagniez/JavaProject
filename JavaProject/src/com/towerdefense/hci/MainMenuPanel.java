@@ -9,8 +9,12 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import com.towerdefense.rcs.event.DisplayLevelSelectionPanel;
+import com.towerdefense.rcs.event.ExitGame;
 
 public class MainMenuPanel extends JPanel {
 
@@ -19,14 +23,19 @@ public class MainMenuPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private Frame frame;
 	private JLabel labelExiageek;
 	private JLabel labelTitle;
 	private GridBagLayout gbl;
 	private GridBagConstraints gc;
 	private final Image img;
+	private JButton buttonPlay;
+	private JButton buttonLoad;
+	private JButton buttonExit;
 
-	public MainMenuPanel (String img){
+	public MainMenuPanel (Frame frame, String img){
 		this(new ImageIcon(img).getImage());
+		this.frame = frame;
 
 		this.labelExiageek = new JLabel("ExiaGeek");
 		this.labelExiageek.setFont(new Font("Tele-Marines", Font.PLAIN, 40));
@@ -50,6 +59,26 @@ public class MainMenuPanel extends JPanel {
 		this.gc.gridx = GridBagConstraints.REMAINDER;
 		this.gc.gridy = 2;
 
+		this.buttonPlay = new JButton(new DisplayLevelSelectionPanel(this.frame, "Play"));
+		this.buttonPlay.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.buttonLoad = new JButton("Load");
+		this.buttonLoad.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.buttonExit = new JButton(new ExitGame(this.frame,"Exit"));
+		this.buttonExit.setFont(new Font("Magneto", Font.PLAIN, 20));
+
+		this.add(this.buttonPlay, this.gc);
+		this.gc.gridx = GridBagConstraints.REMAINDER;
+		this.gc.gridy = 3;
+
+		this.add(this.buttonLoad, this.gc);
+		this.gc.gridx = GridBagConstraints.REMAINDER;
+		this.gc.gridy = 4;
+
+		this.add(this.buttonExit, this.gc);
+		this.gc.gridx = GridBagConstraints.REMAINDER;
+		this.gc.gridy = GridBagConstraints.REMAINDER;
 
 	}
 
