@@ -1,5 +1,7 @@
 package com.towerdefense.rcs.game.pieces.towers;
 
+import com.towerdefense.hci.Frame;
+
 public class TowerDefense {
 
 	/**
@@ -7,7 +9,7 @@ public class TowerDefense {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO - implement TowerDefense.main
+		final Frame frame = new Frame();
 		throw new UnsupportedOperationException();
 	}
 
