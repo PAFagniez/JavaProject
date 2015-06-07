@@ -54,10 +54,10 @@ public class LevelSelectionPanel extends JPanel{
 		this.buttonMap1 = new JButton(new DisplayMap1(this.frame, "  MotherBoard Attack  "));
 		this.buttonMap1.setFont(new Font("Magneto", Font.PLAIN, 20));
 
-		this.buttonMap2 = new JButton("Hard Drive Disk Attack");
+		this.buttonMap2 = new JButton(new DisplayMap1(this.frame, "Hard Drive Disk Attack"));
 		this.buttonMap2.setFont(new Font("Magneto", Font.PLAIN, 20));
 
-		this.buttonMap3 = new JButton("       Bios Attack      ");
+		this.buttonMap3 = new JButton(new DisplayMap1(this.frame, "       Bios Attack      "));
 		this.buttonMap3.setFont(new Font("Magneto", Font.PLAIN, 20));
 
 		this.buttonBack = new JButton(new DisplayMainMenu(this.frame, "Back"));
