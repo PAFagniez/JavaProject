@@ -15,8 +15,8 @@ public class Frame extends JFrame {
 	private GamePanel gamePanel;
 
 	public Frame (){
-		//buildNameSelectionPanel();
-		buildMap1();
+		buildNameSelectionPanel();
+		//buildMap1();
 		build();
 	}
 
